@@ -1,5 +1,7 @@
+import 'package:daip/screens/mapDemo.dart';
 import 'package:flutter/material.dart';
 import 'package:rive/rive.dart';
+import 'package:get/get.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -12,19 +14,10 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   void initState() {
-    // TODO: implement initState
+    // TODO: implement initState=
     super.initState();
     Future.delayed(const Duration(seconds: 3, milliseconds: 500), () {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => const Scaffold(
-            body: Center(
-              child: Text('Hello World'),
-            ),
-          ),
-        ),
-      );
+      Get.to(() => const MapDemo());
     });
   }
   @override
