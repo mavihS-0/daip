@@ -107,22 +107,19 @@ class _BotTileState extends State<BotTile> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     const SizedBox(height: 50),
-                    Container(
-                      width: 80,
-                      height: 80,
-                      decoration: const BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Color(0xffefefef),
-                      ),
-                      child: const Image(
-                        image: AssetImage('images/bot.png'),
-                        width: 60,
-                        height: 60,
+                    Expanded(
+                      child: Container(
+                        decoration: const BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Color(0xffefefef),
+                        ),
+                        child: const Image(
+                          image: AssetImage('images/bot.png'),
+                        ),
                       ),
                     ),
-                    const SizedBox(height: 20),
-                    const Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 16),
+                     Padding(
+                      padding: EdgeInsets.all(widget.connected? 12: 16),
                       child: Text("Lorem ipsum something #249 ggez",
                       style: TextStyle(
                         // overflow: TextOverflow.ellipsis,
