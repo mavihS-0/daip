@@ -1,6 +1,10 @@
 import 'package:daip/helper/constants.dart';
+import 'package:daip/screens/botBuilder.dart';
+import 'package:daip/widgets/bottomNavBar.dart';
 import 'package:flutter/material.dart';
-import 'botTile.dart';
+import 'package:get/get.dart';
+import '../widgets/botTile.dart';
+import 'aboutBuilder.dart';
 
 class HomeWidget extends StatelessWidget {
   const HomeWidget({super.key});
@@ -13,11 +17,12 @@ class HomeWidget extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
           child: Text("DAIP"),
         ),
-        backgroundColor: appBarColor,
         actions: [
           IconButton(
-            onPressed: (){},
-            icon: Icon(Icons.info,size: 25,)
+            onPressed: (){
+              Get.to(() => AboutWidget());
+            },
+            icon: Icon(Icons.info,size: 27,)
           ),
         ],
       ),
@@ -27,8 +32,7 @@ class HomeWidget extends StatelessWidget {
           crossAxisCount: 2,
           childAspectRatio: 0.85,
           children: <Widget>[
-            BotTile(connected: true, img: "images/bot.png",name : "Lorem ipsum something #249 ggez",onTap: (){
-            },),
+            BotTile(connected: true, img: "images/bot.png",name : "Lorem ipsum something #249 ggez",onTap: (){ Get.to(()=>const BotWidget());},),
             BotTile(connected: false, img: "images/bot.png",name : "Lorem ipsum something #249 ggez", onTap: () {  },),
             BotTile(connected: false, img: "images/bot.png",name : "Lorem ipsum something #249 ggez", onTap: () {  },),
             BotTile(connected: false, img: "images/bot.png",name : "Lorem ipsum something #249 ggez", onTap: () {  },),
@@ -36,6 +40,7 @@ class HomeWidget extends StatelessWidget {
           ],
         ),
       ),
+      bottomNavigationBar: const BottomNavBar(),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../helper/constants.dart';
 
@@ -26,6 +27,8 @@ class BotTile extends StatelessWidget {
                 borderRadius: BorderRadius.circular(12)
             ),
             onTap: onTap,
+            onLongPress: (){
+            },
             child: Stack(
               alignment: Alignment.center,
               children: [
