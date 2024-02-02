@@ -1,3 +1,4 @@
+import 'package:daip/helper/constants.dart';
 import 'package:flutter/material.dart';
 import 'botTile.dart';
 
@@ -8,39 +9,30 @@ class HomeWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 120,
         title: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
           child: Text("DAIP"),
         ),
-        // actions: [
-        //   Padding(
-        //     padding: const EdgeInsets.all(8.0),
-        //     child: Image.asset('images/epics.webp',fit: BoxFit.fitHeight,height: 20,),
-        //   ),
-        //   Padding(
-        //     padding: const EdgeInsets.all(8.0),
-        //     child: Image.asset('images/ieee.png',fit: BoxFit.fitHeight,height: 30,),
-        //   ),
-        // ]
+        backgroundColor: appBarColor,
         actions: [
           IconButton(
             onPressed: (){},
-            icon: Icon(Icons.info_outline,size: 25,)
+            icon: Icon(Icons.info,size: 25,)
           ),
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        padding: const EdgeInsets.fromLTRB(16,30,16,16),
         child: GridView.count(
           crossAxisCount: 2,
           childAspectRatio: 0.85,
           children: <Widget>[
-            BotTile(connected: true, img: "images/bot.png",name : "Lorem ipsum something #249 ggez"),
-            BotTile(connected: false, img: "images/bot.png",name : "Lorem ipsum something #249 ggez"),
-            BotTile(connected: false, img: "images/bot.png",name : "Lorem ipsum something #249 ggez"),
-            BotTile(connected: false, img: "images/bot.png",name : "Lorem ipsum something #249 ggez"),
-            BotTile(connected: false, img: "images/bot.png",name : "Lorem ipsum something #249 ggez"),
+            BotTile(connected: true, img: "images/bot.png",name : "Lorem ipsum something #249 ggez",onTap: (){
+            },),
+            BotTile(connected: false, img: "images/bot.png",name : "Lorem ipsum something #249 ggez", onTap: () {  },),
+            BotTile(connected: false, img: "images/bot.png",name : "Lorem ipsum something #249 ggez", onTap: () {  },),
+            BotTile(connected: false, img: "images/bot.png",name : "Lorem ipsum something #249 ggez", onTap: () {  },),
+            BotTile(connected: false, img: "images/bot.png",name : "Lorem ipsum something #249 ggez", onTap: () {  },),
           ],
         ),
       ),
